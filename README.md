@@ -1,15 +1,16 @@
-# 🚀 Middleman Tailwind CSS and Webpack Starter Project 🚀
+# Zold-Green
 
-### A Git repo of a Middleman 4 project set up with Tailwind CSS and Webpack preconfigured. Which is great, because Webpack is kind of a bitch.
+* Eco-informations for Hungary (Zöld is Green in Hungarian)
+* Community based
+* Open for translations
 
-The webpack setup has all CSS being tree shaken (removing all unused CSS so that Tailwind isn't 400kb.) as well as minified. All Javascript is transpiled via Babel and of course minified. This is all done outside of Middleman's asset pipeline, so you probably don't want to mess around with that too too much.
+## Tech
 
-On a different note, this package is definitely opinionated. I have installed all my favorite gems to get me building [client](https://www.nobullco.com) websites as quickly as possible. It includes things such as image compression, sitemap building, easy svg tags, meta tags building among other helpers and tools.
+* Middle man
+* Webpack
+* Tailwind
+* Netlify
 
-If you don't want that and just want the webpack.config.js, feel free to rip it out.
+## Credits
 
-### Credits
-
-Massive thanks to the work done by [gabrielecanepa](https://github.com/gabrielecanepa) and his work on his [middleman-webpack template](https://github.com/gabrielecanepa/middleman-webpack). It was a major help putting together this project and wouldn't have been possible without his help.
-
-Looking through [arandilopez's](arandilopez/arandilopez.me) repo for his personal site ([https://github.com/arandilopez/arandilopez.me](https://github.com/arandilopez/arandilopez.me)) was very helpful as well.
+* Started from https://github.com/richjdsmith/middleman-tailwind-webpack.git
