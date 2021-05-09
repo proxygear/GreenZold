@@ -10,6 +10,7 @@ const JSLoader = {
   }
 };
 
+
 const ESLintLoader = {
   test: /\.js$/,
   enforce: 'pre',
@@ -28,8 +29,9 @@ const CSSLoader = {
   use: [{
       loader: MiniCssExtractPlugin.loader,
       options: {
-        publicPath: __dirname + '/stylesheets/',
-        sourceMap: true
+        publicPath: __dirname + '/stylesheets/'
+        // TODO: Check documentation
+        // sourceMap: true
       }
     },
     // Not to be used in conjunction with MiniCssExtract
@@ -48,10 +50,11 @@ const CSSLoader = {
     {
       loader: 'postcss-loader',
       options: {
-        sourceMap: true,
-        config: {
-          path: __dirname + '/postcss.config.js'
-        }
+        sourceMap: true
+        // TODO: Check documentation
+        // config: {
+        //   path: __dirname + '/postcss.config.js'
+        // }
       }
     },
     {
@@ -62,6 +65,7 @@ const CSSLoader = {
     }
   ],
 };
+
 
 module.exports = {
   JSLoader: JSLoader,
