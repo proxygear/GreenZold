@@ -26,7 +26,7 @@ i18n:
   default_locale: en
 collections:
 - name: articles
-  folder: articles
+  folder: source/articles
   extension: md
   label: Articles
   label_singular: Article
@@ -72,9 +72,10 @@ collections:
   - name: body
     label: Desciption
     sanitize_preview: true
+    widget: markdown
 
 - name: locations
-  folder: locations
+  folder: source/locations
   label: Locations
   label_singular: Location
   identifier_field: name
@@ -140,12 +141,13 @@ collections:
     - name
     - action
     display_fields: "{{action}} - {{ name }}"
+
 - name: services
   label: Services
   label_singular: Service
   identifier_field: name
   description: Service categorization
-  folder: locations
+  folder: source/services
   create: true
   delete: false
   extension: md
