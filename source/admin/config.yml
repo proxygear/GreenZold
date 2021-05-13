@@ -41,12 +41,12 @@ collections:
     label: Name
     widget: string
     required: true
-    pattern: ['.{20,100}', "Must have at least 20 characters, max 100"]
+    pattern: ['.{5,100}', "Must have at least 20 characters, max 100"]
   - name: author
     label: Author
     widget: string
     required: true
-    pattern: ['.{2, 100}', "Must have at least 20 characters, max 100"]
+    pattern: ['.{5, 100}', "Must have at least 20 characters, max 100"]
   - name: locale
     label: Language
     widget: select
@@ -90,7 +90,7 @@ collections:
     label: Name
     widget: string
     required: true
-    pattern: ['.{20,100}', "Must have at least 20 characters, max 100"]
+    pattern: ['.{5,100}', "Must have at least 20 characters, max 100"]
   - name: author
     label: Author
     widget: string
