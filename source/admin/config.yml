@@ -16,7 +16,7 @@ i18n:
   # multiple_folders - persists files in `<folder>/<locale>/<slug>.<extension>`
   # multiple_files - persists files in `<folder>/<slug>.<locale>.<extension>`
   # single_file - persists a single file in `<folder>/<slug>.<extension>`
-  structure: multiple_folders
+  structure: multiple_files
 
   # Required - a list of locales to show in the editor UI
   locales: [en, hu]
@@ -26,16 +26,16 @@ i18n:
   default_locale: en
 collections:
 - name: articles
-  i18n: true
+  folder: articles
+  extension: md
   label: Articles
   label_singular: Article
   identifier_field: name
   description: Something to blog about ?
-  folder: articles
+  format: yaml-frontmatter
   create: true
   delete: false
-  extension: md
-  format: yaml-frontmatter
+  i18n: true
   fields:
   - name: name
     label: Name
@@ -74,18 +74,16 @@ collections:
     sanitize_preview: true
 
 - name: locations
+  folder: locations
   label: Locations
   label_singular: Location
   identifier_field: name
   description: A place on earth were you can do green things
-  folder: locations
   create: true
   delete: false
   extension: md
   format: yaml-frontmatter
-  i18n:
-    structure: single_file
-    locales: [en, hu]
+  i18n: true
   fields:
   - name: name
     i18n: true
@@ -106,7 +104,7 @@ collections:
     label: Updated at
     widget: datetime
   - name: body
-    i19n: true
+    i18n: true
     label: Desciption
     sanitize_preview: true
     widget: markdown
@@ -152,6 +150,7 @@ collections:
   delete: false
   extension: md
   format: yaml-frontmatter
+  i18n: true
   fields:
   - name: name
     i18n: true
