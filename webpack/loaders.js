@@ -1,3 +1,5 @@
+const path = require('path');
+
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const JSLoader = {
   test: /\.js$/,
@@ -49,9 +51,11 @@ const CSSLoader = {
     },
     {
       loader: 'postcss-loader',
+      // TODO: Check documentation
+      // options: path.resolve(__dirname, 'postcss.config.js')
+      // options: __dirname + '/postcss.config.js'
       options: {
         sourceMap: true
-        // TODO: Check documentation
         // config: {
         //   path: __dirname + '/postcss.config.js'
         // }

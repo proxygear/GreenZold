@@ -1,7 +1,176 @@
 backend:
   name: git-gateway
+  local_backend: true
   branch: master
 publish_mode: editorial_workflow
 media_folder: "source/images/uploads"
 #public_folder: "/images/uploads"
-collections: [] # No collections yet
+i18n:
+  # Required and can be one of multiple_folders, multiple_files or single_file
+  # multiple_folders - persists files in `<folder>/<locale>/<slug>.<extension>`
+  # multiple_files - persists files in `<folder>/<slug>.<locale>.<extension>`
+  # single_file - persists a single file in `<folder>/<slug>.<extension>`
+  structure: multiple_folders
+
+  # Required - a list of locales to show in the editor UI
+  locales: [en, hu]
+
+  # Optional, defaults to the first item in locales.
+  # The locale to be used for fields validation and as a baseline for the entry.
+  default_locale: en
+collections:
+- name: articles
+  i18n: true
+  label: Articles
+  label_singular: Article
+  identifier_field: name
+  description: Something to blog about ?
+  folder: articles
+  create: true
+  delete: false
+  extension: md
+  format: yaml-frontmatter
+  fields:
+  - name: name
+    label: Name
+    widget: string
+    required: true
+    pattern: ['.{20,100}', "Must have at least 20 characters, max 100"]
+  - name: author
+    label: Author
+    widget: string
+    required: true
+    pattern: ['.{2, 100}', "Must have at least 20 characters, max 100"]
+  - name: locale
+    label: Language
+    widget: select
+    required: true
+    options:
+    - en
+    - hu
+  - name: created_at
+    label: Created at
+    widget: datetime
+    required: true
+  - name: updated_at
+    label: Updated at
+    widget: datetime
+  - name: translated_from
+    label: Translated from
+    widget: relation
+    collection: articles
+    value_field: name
+    search_fields:
+    - name
+    display_fields: ["{{locale}} - {{name}}"]
+  - name: body
+    label: Desciption
+    sanitize_preview: true
+
+- name: locations
+  label: Locations
+  label_singular: Location
+  identifier_field: name
+  description: A place on earth were you can do green things
+  folder: locations
+  create: true
+  delete: false
+  extension: md
+  format: yaml-frontmatter
+  i18n:
+    structure: single_file
+    locales: [en, hu]
+  fields:
+  - name: name
+    i18n: true
+    label: Name
+    widget: string
+    required: true
+    pattern: ['.{20,100}', "Must have at least 20 characters, max 100"]
+  - name: author
+    label: Author
+    widget: string
+    required: true
+    pattern: ['.{2, 100}', "Must have at least 20 characters, max 100"]
+  - name: created_at
+    label: Created at
+    widget: datetime
+    required: true
+  - name: updated_at
+    label: Updated at
+    widget: datetime
+  - name: body
+    i19n: true
+    label: Desciption
+    sanitize_preview: true
+    widget: markdown
+  - name: coordinates
+    label: Coordinates
+    widget: map
+  - name: zipcode
+    label: Zip code
+    widget: string
+    required: true
+    pattern: ['\d{5}', "5 numbers"]
+  - name: street_name
+    label: Street name
+    widget: string
+    required: true
+    pattern: ['.{1, 100}', "1 to 100 character"]
+  - name: street_number
+    label: Street number
+    widget: string
+    pattern: ['.{,100}', "max 100 character"]
+  - name: street_extra_details
+    label: Street extra derails
+    widget: string
+    pattern: ['.{,100}', "max 100 character"]
+  - name: location_last_check_at
+    label: Location last check at
+    widget: datetime
+  - name: services
+    label: Services
+    collection: servies
+    value_field: name
+    search_fields:
+    - name
+    - action
+    display_fields: "{{action}} - {{ name }}"
+- name: services
+  label: Services
+  label_singular: Service
+  identifier_field: name
+  description: Service categorization
+  folder: locations
+  create: true
+  delete: false
+  extension: md
+  format: yaml-frontmatter
+  fields:
+  - name: name
+    i18n: true
+    label: Name
+    widget: string
+    required: true
+    pattern: ['.{,100}', "max 100 character"]
+  - name: action
+    label: Action
+    widget: select
+    required: true
+    options:
+    - Recycle
+    - Reduce
+    - Reuse
+  - name: location_type
+    label: Location type
+    widget: select
+    required: true
+    options:
+    - Home
+    - Private
+    - Public
+  - name: description
+    i18n: true
+    label: Description
+    widget: string
+    pattern: ['.{,256}', "max 256 character"]

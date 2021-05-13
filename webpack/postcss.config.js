@@ -1,5 +1,6 @@
 const tailwindcss = require('tailwindcss');
 const inProduction = (process.env.NODE_ENV == 'production');
+console.log('postcss', inProduction);
 
 class TailwindExtractor {
   static extract(content) {
@@ -32,5 +33,4 @@ const PROD_PLUGINS = [
 
 module.exports = {
   plugins: inProduction ? PROD_PLUGINS : DEV_PLUGINS
-
 }

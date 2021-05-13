@@ -1,5 +1,11 @@
-# Zold-Green
-
+   _____                     ______     _     _ 
+  / ____|                   |___  /    | |   | |
+ | |  __ _ __ ___  ___ _ __    / / ___ | | __| |
+ | | |_ | '__/ _ \/ _ \ '_ \  / / / _ \| |/ _` |
+ | |__| | | |  __/  __/ | | |/ /_| (_) | | (_| |
+  \_____|_|  \___|\___|_| |_/_____\___/|_|\__,_|
+                                                
+                                                
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2e777fa6-730c-4620-ad60-aece7fee953d/deploy-status)](https://app.netlify.com/sites/boring-swanson-3a6cc9/deploys)
 
 * Eco-informations for Hungary (Zöld is Green in Hungarian)
@@ -8,10 +14,10 @@
 
 ## Tech
 
-* Middle man
-* Webpack
-* Tailwind
-* Netlify
+* [Middleman](https://middlemanapp.com/)
+* [Webpack](https://webpack.js.org/)
+* [Tailwind](https://tailwindcss.com/)
+* [Netlify](https://www.netlifycms.org/)
 
 ## Credits
 
