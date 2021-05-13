@@ -124,11 +124,11 @@ collections:
   - name: street_number
     label: Street number
     widget: string
-    pattern: ['.{,100}', "max 100 character"]
+    pattern: ['.{1,100}', "max 100 character"]
   - name: street_extra_details
     label: Street extra derails
     widget: string
-    pattern: ['.{,100}', "max 100 character"]
+    pattern: ['.{1,100}', "max 100 character"]
   - name: location_last_check_at
     label: Location last check at
     widget: datetime
@@ -157,7 +157,7 @@ collections:
     label: Name
     widget: string
     required: true
-    pattern: ['.{,100}', "max 100 character"]
+    pattern: ['.{1,100}', "max 100 character"]
   - name: action
     label: Action
     widget: select
@@ -178,4 +178,4 @@ collections:
     i18n: true
     label: Description
     widget: string
-    pattern: ['.{,256}', "max 256 character"]
+    pattern: ['.{1,256}', "max 256 character"]
