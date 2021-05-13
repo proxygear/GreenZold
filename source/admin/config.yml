@@ -141,7 +141,7 @@ collections:
     search_fields:
     - name
     - action
-    display_fields: "{{action}} - {{ name }}"
+    display_fields: ["{{action}} - {{ name }}"]
 
 - name: services
   label: Services
