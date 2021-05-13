@@ -96,7 +96,7 @@ collections:
     label: Author
     widget: string
     required: true
-    pattern: ['.{2, 100}', "Must have at least 2 characters, max 100"]
+    pattern: ['.{4,100}', "Must have at least 4 characters, max 100"]
   - name: created_at
     label: Created at
     widget: datetime
@@ -121,7 +121,7 @@ collections:
     label: Street name
     widget: string
     required: true
-    pattern: ['.{1, 100}', "1 to 100 character"]
+    pattern: ['.{1,100}', "1 to 100 character"]
   - name: street_number
     label: Street number
     widget: string
@@ -135,6 +135,7 @@ collections:
     widget: datetime
   - name: services
     label: Services
+    widget: relation
     collection: services
     value_field: name
     search_fields:
