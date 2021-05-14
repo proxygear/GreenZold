@@ -30,7 +30,7 @@ collections:
   extension: md
   label: Articles
   label_singular: Article
-  identifier_field: en.name
+  identifier_field: name
   description: Something to blog about ?
   format: yaml-frontmatter
   create: true
@@ -146,7 +146,7 @@ collections:
 - name: services
   label: Services
   label_singular: Service
-  identifier_field: en.id
+  identifier_field: name
   description: Service categorization
   folder: source/services
   create: true
