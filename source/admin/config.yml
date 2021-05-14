@@ -137,10 +137,10 @@ collections:
     label: Services
     widget: relation
     collection: services
-    value_field: name
+    value_field: en.id
     search_fields:
-    - name
-    - action
+    - en.name
+    - en.action
     display_fields: ["{{ en.action }} - {{ en.name }}"]
 
 - name: services
