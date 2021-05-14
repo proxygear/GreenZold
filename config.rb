@@ -40,8 +40,9 @@ configure :build do
   end
   activate :search_engine_sitemap
   activate :relative_assets
-  activate :robots, rules: [{ user_agent: '*', allow: %w[/] }],
-                    sitemap: File.join(@app.data.site.host, 'sitemap.xml')
+  activate :robots,
+           rules: [{ user_agent: '*', allow: %w[/] }],
+           sitemap: File.join(@app.data.site.host, 'sitemap.xml')
 end
 activate :meta_tags
 activate :inline_svg
