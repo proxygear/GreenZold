@@ -30,7 +30,7 @@ collections:
   extension: md
   label: Articles
   label_singular: Article
-  identifier_field: name
+  identifier_field: en.name
   description: Something to blog about ?
   format: yaml-frontmatter
   create: true
@@ -141,12 +141,12 @@ collections:
     search_fields:
     - name
     - action
-    display_fields: ["{{action}} - {{ name }}"]
+    display_fields: ["{{ en.action }} - {{ en.name }}"]
 
 - name: services
   label: Services
   label_singular: Service
-  identifier_field: name
+  identifier_field: en.id
   description: Service categorization
   folder: source/services
   create: true
@@ -155,6 +155,11 @@ collections:
   format: yaml-frontmatter
   i18n: true
   fields:
+  - name: id
+    label: Identifier
+    widget: string
+    required: true
+    pattern: ['.{1,100}', "Max 100 characters"]
   - name: name
     i18n: true
     label: Name

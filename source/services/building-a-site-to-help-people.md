@@ -1,5 +1,6 @@
 ---
 en:
+  id: test
   name: Building a site to help people
   action: Reduce
   location_type: Home
