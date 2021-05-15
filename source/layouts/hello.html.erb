@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <%= auto_display_meta_tags %>
+    <%= auto_display_favicon_tags if build? %>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag "site" %>
+    <%= javascript_include_tag "site" %>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body class="">
+    <%= I18n.t('hello') %>
+    <h1>This is a test</h1>
+    <h2><%= current_page.data.id %> - <%= current_page.data.title %></h2>
+    <%= yield %>
+  </body>
+</html>

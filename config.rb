@@ -5,6 +5,10 @@ activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 
+activate :i18n,
+         langs: %i[en hu],
+         mount_at_root: :en
+
 config[:js_dir] = 'javascripts'
 config[:css_dir] = 'stylesheets'
 config[:images_dir] = 'images'
