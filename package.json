@@ -19,13 +19,14 @@
     "postcss-preset-env": "^6.7.0",
     "stylelint": "^13.13.1",
     "stylelint-webpack-plugin": "^2.1.1",
+    "tailwindcss": "^2.1.4",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3"
   },
   "scripts": {
-    "start": "webpack-cli serve --mode=development --config ./webpack/webpack.common.js --color",
+    "start": "webpack-cli serve --mode=development --config ./webpack/webpack.common.js --color --stats-children",
     "build": "export NODE_ENV=production && webpack --config ./webpack/webpack.common.js"
   }
 }

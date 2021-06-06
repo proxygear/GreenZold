@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 //const ESLintLoader = require("mini-css-extract-plugin");
 
 const CSSLoader = {
-  test: /\.css$/i,
+  test: /\.(sa|sc|c)ss$/,
   exclude: /node_modules/,
   use: [
     {
