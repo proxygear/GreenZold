@@ -1,9 +1,10 @@
 Dir['./*/*.rb'].each { |file| load file }
 include FaviconsHelper
 
-activate :autoprefixer do |prefix|
-  prefix.browsers = "last 2 versions"
-end
+# FIXME: this should be replaced by postcss tools
+# activate :autoprefixer do |prefix|
+#   prefix.browsers = "last 2 versions"
+# end
 
 activate :i18n,
          langs: %i[en hu],
@@ -17,7 +18,6 @@ config[:images_dir] = 'images'
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
-
 
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings

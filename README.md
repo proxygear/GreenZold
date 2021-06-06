@@ -22,3 +22,4 @@
 ## Credits
 
 * Started from https://github.com/richjdsmith/middleman-tailwind-webpack.git
+* Switch to this config https://jontorrado.medium.com/working-with-webpack-4-es6-postcss-with-preset-env-and-more-93b3d77db7b2

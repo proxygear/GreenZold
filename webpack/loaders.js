@@ -1,8 +1,35 @@
 const path = require('path');
-
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+//const ESLintLoader = require("mini-css-extract-plugin");
+
+const CSSLoader = {
+  test: /\.(sa|sc|c)ss$/,
+  exclude: /node_modules/,
+  use: [
+    {
+      loader: MiniCssExtractPlugin.loader,
+      options: {
+        publicPath: path.resolve(__dirname, '../.tmp/dist')
+      }
+    },
+    {
+      loader: 'css-loader',
+      options: {importLoaders: 1},
+    },
+    {
+      loader: 'postcss-loader',
+      options: {
+        postcssOptions: {
+          config: path.resolve(__dirname, 'postcss.config.js'),
+        },
+      },
+    },
+  ],
+};
+
 const JSLoader = {
-  test: /\.js$/,
+  test: /\.js$/i,
   exclude: /node_modules/,
   use: {
     loader: 'babel-loader',
@@ -12,67 +39,8 @@ const JSLoader = {
   }
 };
 
-
-const ESLintLoader = {
-  test: /\.js$/,
-  enforce: 'pre',
-  exclude: /node_modules/,
-  use: {
-    loader: 'eslint-loader',
-    options: {
-      configFile: '.eslintrc'
-    },
-  }
-};
-
-const CSSLoader = {
-  test: /\.(sa|sc|c)ss$/,
-  exclude: /node_modules/,
-  use: [{
-      loader: MiniCssExtractPlugin.loader,
-      options: {
-        publicPath: __dirname + '/stylesheets/'
-        // TODO: Check documentation
-        // sourceMap: true
-      }
-    },
-    // Not to be used in conjunction with MiniCssExtract
-    // {
-    //   loader: 'style-loader',
-    //   options: {
-    //     sourceMap: true
-    //   }
-    // },
-    {
-      loader: 'css-loader',
-      options: {
-        sourceMap: true
-      }
-    },
-    {
-      loader: 'postcss-loader',
-      // TODO: Check documentation
-      // options: path.resolve(__dirname, 'postcss.config.js')
-      // options: __dirname + '/postcss.config.js'
-      options: {
-        sourceMap: true
-        // config: {
-        //   path: __dirname + '/postcss.config.js'
-        // }
-      }
-    },
-    {
-      loader: 'sass-loader',
-      options: {
-        sourceMap: true
-      }
-    }
-  ],
-};
-
-
 module.exports = {
-  JSLoader: JSLoader,
-  ESLintLoader: ESLintLoader,
-  CSSLoader: CSSLoader
+  CSSLoader: CSSLoader,
+  JSLoader: JSLoader
+//  ESLintLoader: ESLintLoader
 };

@@ -26,7 +26,7 @@ i18n:
   default_locale: en
 collections:
 - name: articles
-  folder: source/articles
+  folder: source/localizable/articles
   extension: md
   label: Articles
   label_singular: Article
@@ -38,44 +38,34 @@ collections:
   i18n: true
   fields:
   - name: name
+    i18n: true
+    required: true
     label: Name
     widget: string
-    required: true
     pattern: ['.{5,100}', "Must have at least 20 characters, max 100"]
-  - name: author
-    label: Author
+  - name: authors
+    label: Authors
     widget: string
+    i18n: duplicate
     required: true
     pattern: ['.{5, 100}', "Must have at least 20 characters, max 100"]
-  - name: locale
-    label: Language
-    widget: select
-    required: true
-    options:
-    - en
-    - hu
   - name: created_at
+    required: true
+    i18n: duplicate
     label: Created at
     widget: datetime
-    required: true
   - name: updated_at
+    i18n: duplicate
     label: Updated at
     widget: datetime
-  - name: translated_from
-    label: Translated from
-    widget: relation
-    collection: articles
-    value_field: name
-    search_fields:
-    - name
-    display_fields: ["{{locale}} - {{name}}"]
   - name: body
+    i18n: true
     label: Desciption
     sanitize_preview: true
     widget: markdown
 
 - name: locations
-  folder: source/locations
+  folder: source/localizable/locations
   label: Locations
   label_singular: Location
   identifier_field: name
@@ -88,19 +78,21 @@ collections:
   fields:
   - name: name
     i18n: true
+    required: true
     label: Name
     widget: string
-    required: true
     pattern: ['.{5,100}', "Must have at least 20 characters, max 100"]
-  - name: author
-    label: Author
-    widget: string
+  - name: authors
+    i18n: true
     required: true
+    label: Authors
+    widget: string
     pattern: ['.{4,100}', "Must have at least 4 characters, max 100"]
   - name: created_at
+    i18n: duplicate
+    required: true
     label: Created at
     widget: datetime
-    required: true
   - name: updated_at
     label: Updated at
     widget: datetime
@@ -113,27 +105,33 @@ collections:
     label: Coordinates
     widget: map
   - name: zipcode
+    i18n: duplicate
+    required: true
     label: Zip code
     widget: string
-    required: true
     pattern: ['\d{5}', "5 numbers"]
   - name: street_name
+    i18n: duplicate
+    required: true
     label: Street name
     widget: string
-    required: true
     pattern: ['.{1,100}', "1 to 100 character"]
   - name: street_number
+    i18n: duplicate
     label: Street number
     widget: string
     pattern: ['.{1,100}', "max 100 character"]
   - name: street_extra_details
+    i18n: duplicate
     label: Street extra derails
     widget: string
     pattern: ['.{1,100}', "max 100 character"]
   - name: location_last_check_at
+    i18n: duplicate
     label: Location last check at
     widget: datetime
   - name: services
+    i18n: duplicate
     label: Services
     widget: relation
     collection: services
@@ -148,7 +146,7 @@ collections:
   label_singular: Service
   identifier_field: name
   description: Service categorization
-  folder: source/services
+  folder: source/localizable/services
   create: true
   delete: false
   extension: md
@@ -156,6 +154,7 @@ collections:
   i18n: true
   fields:
   - name: id
+    i18n: duplicate
     label: Identifier
     widget: string
     required: true
@@ -167,6 +166,7 @@ collections:
     required: true
     pattern: ['.{1,100}', "max 100 character"]
   - name: action
+    i18n: duplicate
     label: Action
     widget: select
     required: true
@@ -175,6 +175,7 @@ collections:
     - Reduce
     - Reuse
   - name: location_type
+    i18n: duplicate
     label: Location type
     widget: select
     required: true
