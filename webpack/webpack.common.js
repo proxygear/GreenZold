@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack'); // to access built-in plugins
 const loaders = require('./loaders');
 const plugins = require('./plugins');
+console.log('hello', path.resolve(__dirname, '../.tmp/dist'));
 
 module.exports = {
   entry: {

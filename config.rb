@@ -54,7 +54,7 @@ activate :external_pipeline,
          name: :webpack,
          command: build? ? 'yarn run build' : 'yarn run start',
          source: '.tmp/dist',
-         latency: 2
+         latency: 1
 
 set :favicons, [
   {

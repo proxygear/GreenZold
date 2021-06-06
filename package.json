@@ -1,8 +1,9 @@
 {
   "name": "GreenZold",
+  "private": true,
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "source/javascripts/site.js",
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
@@ -26,7 +27,7 @@
     "webpack-merge": "^5.7.3"
   },
   "scripts": {
-    "start": "webpack-cli serve --mode=development --config ./webpack/webpack.common.js --color --stats-children",
+    "start": "webpack-cli watch --mode=development --config ./webpack/webpack.common.js --color --stats-children",
     "build": "export NODE_ENV=production && webpack --config ./webpack/webpack.common.js"
   }
 }

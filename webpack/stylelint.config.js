@@ -1,6 +1,18 @@
+// extra https://dev.to/oliverandrich/vscode-stylelint-tailwind-css-3oag
 module.exports = {
   rules: {
-    "at-rule-no-unknown": true,
+    "at-rule-no-unknown": [
+      true,
+      {
+        ignoreAtRules: [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen",
+        ],
+      },
+    ],
     "block-no-empty": true,
     "color-no-invalid-hex": true,
     "comment-no-empty": true,
