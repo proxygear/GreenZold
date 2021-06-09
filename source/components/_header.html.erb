@@ -1,0 +1,13 @@
+<header class='absolute top-0 left-0 right-0 bg-green-500 text-white px-2 py-1 flex'>
+  <div class='flex-1'>
+    <% link_to local_path('/index.html'), class: 'font-mono' do %>
+      Green/Zöld
+    <% end %>
+  </div>
+  <div class='flex-1 text-right'>
+    <% link_to(opposite_locale_path) do %>
+      <%= opposite_locale.to_s.upcase %>?
+    <% end %>
+    <a href='' class='pl-2'>Menu</a>
+  </div>
+</header>

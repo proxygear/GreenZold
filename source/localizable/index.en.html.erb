@@ -1,0 +1,18 @@
+---
+layout: "layout"
+---
+<% set_meta_tags(
+  title: data.site.name + " | " + data.site.description,
+  full_title: false
+) %>
+
+<h1 class="font-sans text-2xl">
+  GreenZöld
+</h1>
+<h2 class='font-sans text-xl'>
+  Discover the places arround that offer green services.
+</h2>
+
+<%= link_to 'Find services', 'second-page', class: 'button' %>
+<%= link_to 'Read news', 'second-page', class: 'button' %>
+<%= link_to 'Help the community', 'second-page', class: 'button' %>
