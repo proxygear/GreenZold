@@ -54,7 +54,7 @@ activate :meta_tags
 activate :inline_svg
 activate :external_pipeline,
          name: :webpack,
-         command: build? ? 'yarn run build' : 'yarn run start',
+         command: build? ? 'npm run build' : 'npm run start',
          source: '.tmp/dist',
          latency: 1
 
