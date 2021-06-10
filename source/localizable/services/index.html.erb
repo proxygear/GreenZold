@@ -1,0 +1,9 @@
+<h1><%= I18n.t(:services) %></h1>
+<ul>
+  <% current_page.children.each do |service| %>
+    <% next if service.path.end_with?(".#{opposite_locale}")  %>
+    <li>
+      <%= link_to service.data.name, "/#{service.path}" %>
+    </li>
+  <% end %>
+</ul>

@@ -28,6 +28,7 @@ collections:
 - name: articles
   folder: source/localizable/articles
   extension: md
+  slug: '{{ slug }}.html'
   label: Articles
   label_singular: Article
   identifier_field: name
@@ -73,6 +74,7 @@ collections:
   create: true
   delete: false
   extension: md
+  slug: '{{ slug }}.html'
   format: yaml-frontmatter
   i18n: true
   fields:
@@ -150,6 +152,7 @@ collections:
   create: true
   delete: false
   extension: md
+  slug: '{{ slug }}.html'
   format: yaml-frontmatter
   i18n: true
   fields:

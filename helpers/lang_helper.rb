@@ -18,6 +18,7 @@ module LangHelper
     if l == :en
       path
     else
+      path = '' if path == '/'
       "/hu#{path}"
     end
   end

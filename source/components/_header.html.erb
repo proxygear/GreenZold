@@ -1,7 +1,13 @@
-<header class='absolute top-0 left-0 right-0 bg-green-500 text-white px-2 py-1 flex'>
+<header class='absolute top-0 left-0 right-0 bg-green-600 text-white px-4 py-2 flex'>
   <div class='flex-1'>
-    <% link_to local_path('/index.html'), class: 'font-mono' do %>
+    <% link_to local_path('/'), class: 'font-mono' do %>
       Green/Zöld
+    <% end %>
+    <% link_to local_path('/locations'), class: 'pl-4' do %>
+      Locations
+    <% end %>
+    <% link_to local_path('/services'), class: 'pl-2' do %>
+      Services
     <% end %>
   </div>
   <div class='flex-1 text-right'>

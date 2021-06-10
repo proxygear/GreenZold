@@ -22,6 +22,8 @@ page '/*.txt', layout: false
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 set :url_root, @app.data.site.host
+set :markdown_engine, :kramdown
+set :haml, { :format => :html5 }
 
 activate :livereload
 
