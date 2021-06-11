@@ -1,3 +1,7 @@
+'use strict';
+
+const path = require('path');
+
 module.exports = {
   plugins: {
     'postcss-import': {},
@@ -11,6 +15,8 @@ module.exports = {
       },
     },
     'cssnano': {},
-    'tailwindcss': {},
+    'tailwindcss': {
+      config: path.join(__dirname, '../tailwind.config.js')
+    },
   },
 };
