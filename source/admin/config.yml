@@ -141,7 +141,7 @@ collections:
     - name
     - en.action
     - action
-    display_fields: ["x? {{ en.action }} - {{ en.name }}/{{ name }}"]
+    display_fields: ["{{en.action}} x? {{en.name}}/{{name}}"]
 
 - name: services
   label: Services
