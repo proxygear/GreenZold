@@ -135,11 +135,13 @@ collections:
     label: Services
     widget: relation
     collection: services
-    value_field: en.id
+    value_field: id
     search_fields:
     - en.name
+    - name
     - en.action
-    display_fields: ["{{ en.action }} - {{ en.name }}"]
+    - action
+    display_fields: ["x? {{ en.action }} - {{ en.name }}/{{ name }}"]
 
 - name: services
   label: Services
