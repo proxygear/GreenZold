@@ -27,7 +27,7 @@ i18n:
 collections:
 - name: articles
   folder: source/localizable/articles
-  extension: md
+  extension: html.md
   label: Articles
   label_singular: Article
   identifier_field: name
@@ -72,8 +72,7 @@ collections:
   description: A place on earth were you can do green things
   create: true
   delete: false
-  extension: md
-  slug: '{{ slug }}.html'
+  extension: html.md
   format: yaml-frontmatter
   i18n: true
   fields:
@@ -150,7 +149,7 @@ collections:
   folder: source/localizable/services
   create: true
   delete: false
-  extension: md
+  extension: html.md
   format: yaml-frontmatter
   i18n: true
   fields:
