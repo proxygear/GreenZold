@@ -109,7 +109,7 @@ collections:
     required: true
     label: Zip code
     widget: string
-    pattern: ['\d{5}', "5 numbers"]
+    pattern: ['\d{4}', "4 numbers"]
   - name: street_name
     i18n: duplicate
     required: true
